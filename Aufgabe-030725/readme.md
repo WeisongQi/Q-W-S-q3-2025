@@ -108,8 +108,7 @@ Alex stellt fest, dass ein wichtiges Programm nicht gefunden wird und muss die P
    > > echo -e '#!/bin/bash\necho "Hallo Welt!"' > ~/meine_tools/hallo
    > > chmod +x ~/meine_tools/hallo
 5. Überprüfen Sie mit `which`, ob das System die Datei finden würde
-
-> > which hallo
+   > > which hallo
 
 **Befehle zu verwenden:** `echo`, `mkdir`, `touch`, `which`
 
