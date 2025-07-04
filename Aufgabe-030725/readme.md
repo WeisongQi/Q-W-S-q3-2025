@@ -105,8 +105,11 @@ Alex stellt fest, dass ein wichtiges Programm nicht gefunden wird und muss die P
    > > export PATH=$PATH:+/meine_tools
 4. Erstellen Sie in `~/meine_tools` eine ausführbare Datei namens `hallo` (erstellen Sie nur die Datei, Ausführungsrechte kommen später)
    > > touch ~/meine_tools/hallo
+   > > echo -e '#!/bin/bash\necho "Hallo Welt!"' > ~/meine_tools/hallo
+   > > chmod +x ~/meine_tools/hallo
 5. Überprüfen Sie mit `which`, ob das System die Datei finden würde
-   > > which hallo
+
+> > which hallo
 
 **Befehle zu verwenden:** `echo`, `mkdir`, `touch`, `which`
 
