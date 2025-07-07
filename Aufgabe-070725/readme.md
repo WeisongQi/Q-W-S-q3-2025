@@ -31,15 +31,18 @@ Alex muss herausfinden, welche Backup-Dateien älter als eine Woche sind und gel
 **Ihre Aufgaben:**
 
 1. Erstellen Sie mehrere Testdateien mit verschiedenen Datums-Stempeln:
+
    - `backup_alt.tar` (versuchen Sie, das Datum zu ändern)
    - `backup_neu.tar`
    - `backup_config.conf`
+
      > > touch backup_alt.tar backup_neu.tar backup_config.conf
      > > echo date > backup_alt.tar
      > > echo date > backup_new.tar
      > > echo date > backup_config.conf
      > > touch -d "2 days ago" backup_alt.tar
      > > touch -t "202411241200.44" backup_config.conf
+
 2. Nutzen Sie `find` um:
    - Alle `.tar` Dateien zu finden
      > > find . -type f -name "\*.tar"
@@ -48,7 +51,8 @@ Alex muss herausfinden, welche Backup-Dateien älter als eine Woche sind und gel
    - Alle Dateien zu finden, die das Wort "backup" im Namen haben
      > > find ~ -name "backup\*"
 3. Kombinieren Sie `find` mit `ls -l` um Details der gefundenen Dateien anzuzeigen
-   > > find ~ -name "backup*" -exec ls -l {} \;
-   > > find ~ -name "backup*" -type f -size +0c -exec ls -l {} \;
+
+   > > find ~ -name "backup\*" -exec ls -l {} \;
+   > > find ~ -name "backup\*" -type f -size +0c -exec ls -l {} \;
 
 **Befehle zu verwenden:** `touch`, `find`, `ls`
