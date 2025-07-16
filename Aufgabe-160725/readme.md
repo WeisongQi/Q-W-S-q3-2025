@@ -15,9 +15,14 @@ Kapitel 5.1 – Sicherheitsgrundlagen & Benutzerverwaltung
 Benutzer anlegen
 Zum neuen Benutzer wechseln
 Versuche einen Befehl mit sudo auszuführen, z.B sudo apt update -> Sollte zu einer Fehlermeldung führen, warum ?
+
+> Der neue Benutzer gehört standardmäßig nicht zur Gruppe `sudo`. Ohne Mitgliedschaft in dieser Gruppe hat er keine Berechtigung, `sudo` zu verwenden.
+
 Wechsle zurück zum ursprünglichen Benutzer mit exit
 Füge den neuen Benutzer zur sudo-Gruppe hinzu
 Melde dich erneut als den neuen user an und überprüfe ob sudo apt update jetzt funktioniert. Warum funktioniert er diesmal ?
+
+> Durch die Mitgliedschaft in der Gruppe `sudo` erhält der Benutzer die nötigen Berechtigungen, um mit sudo administrative Befehle auszuführen. Die Gruppe sudo ist in der Datei `/etc/sudoers` konfiguriert, die definiert, welche Benutzer oder Gruppen `sudo` nutzen dürfen.
 
 ![Schritte](/images/Screenshot%202025-07-16%20193348.png)
 
@@ -45,13 +50,13 @@ Wo stehen die Informationen zu einem Benutzer im System?
 
 > Benutzerinformationen werden in Textdateien im Verzeichnis /etc gespeichert:
 >
-> > ​**/etc/passwd**: Enthält grundlegende Benutzerdaten (Benutzername, UID, GID, Home-Verzeichnis, Shell). Beispielzeile: testuser:x:1001:1001:Test Benutzer:/home/testuser:/bin/bash (Felder: Benutzername : Passwort-Hash (x = verschlüsselt in /etc/shadow) : UID : GID : Kommentar : Home-Verzeichnis : Shell)
+> > ​`/etc/passwd`: Enthält grundlegende Benutzerdaten (Benutzername, UID, GID, Home-Verzeichnis, Shell). Beispielzeile: testuser:x:1001:1001:Test Benutzer:/home/testuser:/bin/bash (Felder: Benutzername : Passwort-Hash (x = verschlüsselt in /etc/shadow) : UID : GID : Kommentar : Home-Verzeichnis : Shell)
 > >
-> > ​**/etc/shadow**: Speichert verschlüsselte Passwörter, Passwort-Ablaufzeiten und Sicherheitseinstellungen. Nur root kann lesen.
+> > ​`/etc/shadow`: Speichert verschlüsselte Passwörter, Passwort-Ablaufzeiten und Sicherheitseinstellungen. Nur root kann lesen.
 > >
-> > ​**/etc/group**: Enthält Gruppendaten (Gruppenname, GID, Mitglieder).
+> > ​`/etc/group`: Enthält Gruppendaten (Gruppenname, GID, Mitglieder).
 > >
-> > ​**/etc/gshadow**: Speichert verschlüsselte Gruppeninformationen (ähnlich /etc/shadow).
+> > ​`/etc/gshadow`: Speichert verschlüsselte Gruppeninformationen (ähnlich /etc/shadow).
 
 Warum braucht ein neuer Benutzer erst zusätzliche Rechte, um sudo verwenden zu dürfen?
 
