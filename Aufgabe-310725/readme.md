@@ -1,0 +1,5 @@
+# Aufgabe Heute
+
+Ich habe Quiz gemacht. und nach Plan in 1807205(Reihenfolge 5-2-4-3-1), habe die Befehle im Skript angeschaut und im Terminal ausprobiert.
+
+und Docker Aufgabe gemacht.
